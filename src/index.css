@@ -5,6 +5,7 @@
 @theme {
   --color-accent: #22c55e;
   --color-accent-hover: #16a34a;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 html {
@@ -13,4 +14,36 @@ html {
 
 body {
   @apply bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100;
+  font-family: var(--font-mono);
+}
+
+/* subtle dot-grid background, dark mode only */
+.dark body {
+  background-image: radial-gradient(circle, #1e293b 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* glowing border/shadow on hover for cards */
+.glow-card {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.glow-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 1px var(--color-accent), 0 0 24px -8px var(--color-accent);
+}
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
 }

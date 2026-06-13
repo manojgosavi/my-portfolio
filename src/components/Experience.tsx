@@ -1,21 +1,21 @@
 import { experiences, profile } from '../data'
+import SectionHeading from './SectionHeading'
 
 export default function Experience() {
   return (
     <section id="experience" className="scroll-mt-16 px-6 py-24">
       <div className="mx-auto max-w-4xl">
-        <div className="mx-auto mb-16 max-w-2xl text-center">
-          <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white">
-            Experience
-          </h2>
-          <p className="mt-3 text-slate-600 dark:text-slate-400">{profile.summary}</p>
-        </div>
+        <SectionHeading
+          command="cat experience.log"
+          title="Experience"
+          description={profile.summary}
+        />
 
         <div className="flex flex-col gap-8">
           {experiences.map((job) => (
             <div
               key={`${job.company}-${job.period}`}
-              className="rounded-lg border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900"
+              className="glow-card rounded-lg border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900"
             >
               <div className="flex flex-col justify-between gap-1 sm:flex-row sm:items-baseline">
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white">

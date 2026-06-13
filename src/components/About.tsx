@@ -1,18 +1,55 @@
 import { profile, socialLinks } from '../data'
+import { useTypewriter } from '../hooks/useTypewriter'
+import TerminalWindow from './TerminalWindow'
+
+const SCRIPT = [
+  '$ whoami',
+  `> ${profile.name} — ${profile.title}`,
+  '$ cat tagline.txt',
+  `> ${profile.tagline}`,
+  '$ ./connect.sh --open',
+]
 
 export default function About() {
+  const { lines, currentLine, done } = useTypewriter(SCRIPT, 22, 300)
+
   return (
     <section id="about" className="scroll-mt-16 px-6 py-24 md:py-32">
-      <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
+      <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
         <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-accent">
           {profile.title}
         </p>
         <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-6xl dark:text-white">
           Hi, I'm {profile.name}.
         </h1>
-        <p className="mt-6 max-w-2xl text-lg text-slate-600 dark:text-slate-300">
-          {profile.tagline}
-        </p>
+
+        <TerminalWindow title="manoj@portfolio:~" className="mt-10 w-full">
+          <div className="min-h-[9.5rem]">
+            {lines.map((line, i) => (
+              <p
+                key={i}
+                className={
+                  line.startsWith('$')
+                    ? 'text-slate-900 dark:text-white'
+                    : 'text-accent'
+                }
+              >
+                {line}
+              </p>
+            ))}
+            <p
+              className={
+                currentLine.startsWith('$')
+                  ? 'text-slate-900 dark:text-white'
+                  : 'text-accent'
+              }
+            >
+              {currentLine}
+              <span className="cursor-blink">{done ? '█' : ''}</span>
+              {!done && <span className="cursor-blink">▌</span>}
+            </p>
+          </div>
+        </TerminalWindow>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <a
