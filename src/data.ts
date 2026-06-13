@@ -231,6 +231,18 @@ export const certifications: Certification[] = [
   { title: 'Apache Airflow Fundamentals', issuer: 'Astronomer' },
 ]
 
+export const codingProfiles = {
+  github: 'manojgosavi',
+  leetcode: 'manojgosavi',
+}
+
+// TODO: replace with your real SQL leaderboard rank/link once available
+export const sqlLeaderboard = {
+  platform: 'SQLScratch',
+  status: 'Coming soon',
+  link: 'https://example.com',
+}
+
 export interface NavLink {
   label: string
   href: string
@@ -242,6 +254,7 @@ export const navLinks: NavLink[] = [
   { label: 'Projects', href: '#projects' },
   { label: 'Side Projects', href: '#side-projects' },
   { label: 'Skills', href: '#skills' },
+  { label: 'Activity', href: '#activity' },
   { label: 'Contact', href: '#contact' },
 ]
 

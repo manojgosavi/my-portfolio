@@ -1,5 +1,6 @@
 import About from './components/About'
 import Certifications from './components/Certifications'
+import CodingActivity from './components/CodingActivity'
 import Contact from './components/Contact'
 import Experience from './components/Experience'
 import Footer from './components/Footer'
@@ -19,6 +20,7 @@ export default function App() {
         <SideProjects />
         <Skills />
         <Certifications />
+        <CodingActivity />
         <Contact />
       </main>
       <Footer />
