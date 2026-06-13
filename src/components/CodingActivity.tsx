@@ -10,7 +10,7 @@ export default function CodingActivity() {
   const leetcodeTheme = isDark ? 'dark' : 'light'
 
   return (
-    <section id="activity" className="scroll-mt-16 px-6 py-24">
+    <section id="activity" className="scroll-mt-16 px-6 py-16">
       <div className="mx-auto max-w-5xl">
         <SectionHeading
           command="curl -s api/coding-activity | jq"

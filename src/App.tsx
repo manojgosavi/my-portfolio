@@ -1,5 +1,4 @@
 import About from './components/About'
-import Certifications from './components/Certifications'
 import CodingActivity from './components/CodingActivity'
 import Contact from './components/Contact'
 import Experience from './components/Experience'
@@ -19,7 +18,6 @@ export default function App() {
         <Projects />
         <SideProjects />
         <Skills />
-        <Certifications />
         <CodingActivity />
         <Contact />
       </main>
