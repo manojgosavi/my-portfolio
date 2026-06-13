@@ -1,18 +1,25 @@
+import { socialLinks } from '../data'
+
 export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="footer">
-      <div className="container footer__inner">
+    <footer className="border-t border-slate-200 px-6 py-8 dark:border-slate-800">
+      <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 text-sm text-slate-500 sm:flex-row dark:text-slate-400">
         <p>&copy; {year} Manoj Gosavi. All rights reserved.</p>
-        <div className="footer__links">
-          <a href="https://github.com" target="_blank" rel="noreferrer">
-            GitHub
-          </a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-            LinkedIn
-          </a>
-          <a href="mailto:manoj.gosavi2901@gmail.com">Email</a>
+        <div className="flex items-center gap-4">
+          {socialLinks.map((social) => (
+            <a
+              key={social.label}
+              href={social.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={social.label}
+              className="transition-colors hover:text-accent"
+            >
+              <social.icon size={18} />
+            </a>
+          ))}
         </div>
       </div>
     </footer>
