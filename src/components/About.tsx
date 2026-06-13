@@ -1,3 +1,4 @@
+import { Download } from 'lucide-react'
 import { profile, socialLinks } from '../data'
 import { useTypewriter } from '../hooks/useTypewriter'
 import TerminalWindow from './TerminalWindow'
@@ -63,6 +64,14 @@ export default function About() {
             className="rounded-md border border-slate-300 px-6 py-2.5 text-sm font-semibold text-slate-700 transition-colors hover:border-accent hover:text-accent dark:border-slate-700 dark:text-slate-200 dark:hover:border-accent dark:hover:text-accent"
           >
             View My Experience
+          </a>
+          <a
+            href="/Manoj_Gosavi_Resume.pdf"
+            download
+            className="inline-flex items-center gap-2 rounded-md border border-slate-300 px-6 py-2.5 text-sm font-semibold text-slate-700 transition-colors hover:border-accent hover:text-accent dark:border-slate-700 dark:text-slate-200 dark:hover:border-accent dark:hover:text-accent"
+          >
+            <Download size={16} />
+            Download Resume
           </a>
         </div>
 
