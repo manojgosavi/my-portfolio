@@ -1,26 +1,23 @@
 import { ExternalLink } from 'lucide-react'
 import { sideProjects } from '../data'
 import { GithubIcon } from './icons'
+import SectionHeading from './SectionHeading'
 
 export default function SideProjects() {
   return (
     <section id="side-projects" className="scroll-mt-16 px-6 py-24">
       <div className="mx-auto max-w-5xl">
-        <div className="mx-auto mb-16 max-w-2xl text-center">
-          <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white">
-            Side Projects
-          </h2>
-          <p className="mt-3 text-slate-600 dark:text-slate-400">
-            Things I'm building outside of work — exploring data engineering, backend
-            systems, and machine learning.
-          </p>
-        </div>
+        <SectionHeading
+          command="git log --oneline ./side-projects"
+          title="Side Projects"
+          description="Things I'm building outside of work — exploring data engineering, backend systems, and machine learning."
+        />
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {sideProjects.map((project) => (
             <div
               key={project.title}
-              className="flex flex-col rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-accent hover:shadow-md dark:border-slate-800 dark:bg-slate-900"
+              className="glow-card flex flex-col rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900"
             >
               <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
                 {project.title}
