@@ -251,9 +251,8 @@ export interface SocialLink {
   icon: Icon
 }
 
-// TODO: replace with your real GitHub URL
 export const socialLinks: SocialLink[] = [
-  { label: 'GitHub', href: 'https://github.com', icon: GithubIcon },
+  { label: 'GitHub', href: 'https://github.com/manojgosavi', icon: GithubIcon },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/manoj-gosavi', icon: LinkedinIcon },
   { label: 'Email', href: 'mailto:manoj.gosavi2901@gmail.com', icon: Mail },
 ]
