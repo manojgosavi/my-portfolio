@@ -1,4 +1,4 @@
-import { skills } from '../data'
+import { skillCategories } from '../data'
 
 export default function Skills() {
   return (
@@ -13,16 +13,28 @@ export default function Skills() {
           </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {skills.map((skill) => (
+        <div className="grid gap-6 sm:grid-cols-2">
+          {skillCategories.map((group) => (
             <div
-              key={skill.name}
-              className="flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-4 transition-colors hover:border-accent dark:border-slate-800 dark:bg-slate-900"
+              key={group.category}
+              className="rounded-lg border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900"
             >
-              <skill.icon size={20} className="text-accent" />
-              <span className="font-medium text-slate-800 dark:text-slate-200">
-                {skill.name}
-              </span>
+              <div className="mb-3 flex items-center gap-2">
+                <group.icon size={20} className="text-accent" />
+                <h3 className="font-semibold text-slate-900 dark:text-white">
+                  {group.category}
+                </h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-700 dark:bg-slate-800 dark:text-slate-300"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
