@@ -1,4 +1,5 @@
-import { skillCategories } from '../data'
+import { Award } from 'lucide-react'
+import { certifications, skillCategories } from '../data'
 import SectionHeading from './SectionHeading'
 
 export default function Skills() {
@@ -35,6 +36,26 @@ export default function Skills() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-16">
+          <h3 className="mb-6 text-center text-xl font-bold text-slate-900 dark:text-white">
+            <span className="text-accent">$ </span>cat certifications.txt
+          </h3>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {certifications.map((cert) => (
+              <div
+                key={cert.title}
+                className="glow-card flex items-start gap-3 rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900"
+              >
+                <Award size={20} className="mt-0.5 shrink-0 text-accent" />
+                <div>
+                  <p className="font-medium text-slate-900 dark:text-white">{cert.title}</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">{cert.issuer}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
