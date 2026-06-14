@@ -1,6 +1,8 @@
 import { Database } from 'lucide-react'
 import { codingProfiles, sqlLeaderboard } from '../data'
 import { useDarkMode } from '../hooks/useDarkMode'
+import ActivityLog from './ActivityLog'
+import CodingTrend from './CodingTrend'
 import SectionHeading from './SectionHeading'
 import TerminalWindow from './TerminalWindow'
 
@@ -59,6 +61,14 @@ export default function CodingActivity() {
                 <span className="text-accent">{sqlLeaderboard.status}</span>
               </span>
             </a>
+          </TerminalWindow>
+
+          <TerminalWindow title="contributions-trend.sh" className="lg:col-span-2">
+            <CodingTrend />
+          </TerminalWindow>
+
+          <TerminalWindow title="activity.log" className="lg:col-span-2">
+            <ActivityLog />
           </TerminalWindow>
         </div>
       </div>
