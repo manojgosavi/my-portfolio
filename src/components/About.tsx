@@ -15,7 +15,7 @@ export default function About() {
   const { lines, currentLine, done } = useTypewriter(SCRIPT, 22, 300)
 
   return (
-    <section id="about" className="scroll-mt-16 px-6 py-24 md:py-32">
+    <section id="about" className="scroll-mt-16 px-6 py-16 md:py-20">
       <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
         <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-accent">
           {profile.title}
@@ -24,7 +24,7 @@ export default function About() {
           Hi, I'm {profile.name}.
         </h1>
 
-        <TerminalWindow title="manoj@portfolio:~" className="mt-10 w-full">
+        <TerminalWindow title="manoj@portfolio:~" className="mt-8 w-full">
           <div className="min-h-[9.5rem]">
             {lines.map((line, i) => (
               <p
@@ -75,7 +75,7 @@ export default function About() {
           </a>
         </div>
 
-        <div className="mt-10 flex items-center gap-4">
+        <div className="mt-8 flex items-center gap-4">
           {socialLinks.map((social) => (
             <a
               key={social.label}

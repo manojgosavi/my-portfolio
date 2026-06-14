@@ -199,12 +199,12 @@ export const sideProjects: SideProject[] = [
     repo: 'https://github.com',
   },
   {
-    title: 'Open-Source ETL Framework',
+    title: 'llm-eval-platform',
     description:
-      'A lightweight, config-driven ETL framework in Python for building and scheduling data pipelines, with built-in data quality checks and Airflow integration.',
-    tags: ['Python', 'Airflow', 'dbt', 'Data Quality'],
+      'An open-source platform to A/B test and score LLM outputs across providers (Claude, GPT-4o, Gemini) using latency, cost, token, and semantic quality metrics.',
+    tags: ['Python', 'FastAPI', 'React', 'Docker'],
     link: 'https://example.com',
-    repo: 'https://github.com',
+    repo: 'https://github.com/manojgosavi/llm-eval-platform',
   },
   {
     title: 'ML-Powered Resume/Job Matcher',
