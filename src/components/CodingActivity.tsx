@@ -1,15 +1,16 @@
-import { Database } from 'lucide-react'
-import { codingProfiles, sqlLeaderboard } from '../data'
-import { useDarkMode } from '../hooks/useDarkMode'
-import ActivityLog from './ActivityLog'
-import CodingTrend from './CodingTrend'
-import SectionHeading from './SectionHeading'
-import TerminalWindow from './TerminalWindow'
+import { Database } from "lucide-react";
+import { codingProfiles, sqlLeaderboard } from "../data";
+import { useDarkMode } from "../hooks/useDarkMode";
+import ActivityLog from "./ActivityLog";
+import CodingTrend from "./CodingTrend";
+import SectionHeading from "./SectionHeading";
+import TerminalWindow from "./TerminalWindow";
+import { GitHubCalendar } from "react-github-calendar";
 
 export default function CodingActivity() {
-  const { isDark } = useDarkMode()
-  const githubTheme = isDark ? 'dark' : 'default'
-  const leetcodeTheme = isDark ? 'dark' : 'light'
+  const { isDark } = useDarkMode();
+  const githubTheme = isDark ? "dark" : "default";
+  const leetcodeTheme = isDark ? "dark" : "light";
 
   return (
     <section id="activity" className="scroll-mt-16 px-6 py-16">
@@ -21,13 +22,12 @@ export default function CodingActivity() {
         />
 
         <div className="grid gap-6 lg:grid-cols-2">
-          <TerminalWindow title="github-contributions.svg" className="lg:col-span-2">
-            <img
-              src={`https://ghchart.rshah.org/22c55e/${codingProfiles.github}`}
-              alt={`${codingProfiles.github}'s GitHub contribution graph`}
-              className="w-full"
-              loading="lazy"
-            />
+          <TerminalWindow
+            title="github-contributions.svg"
+            className="lg:col-span-2"
+          >
+            <pre>{codingProfiles.github} on GitHub</pre>
+            <GitHubCalendar username={codingProfiles.github} blockSize={13} />
           </TerminalWindow>
 
           <TerminalWindow title="github-stats.svg">
@@ -48,7 +48,10 @@ export default function CodingActivity() {
             />
           </TerminalWindow>
 
-          <TerminalWindow title="sql-leaderboard.json" className="lg:col-span-2">
+          <TerminalWindow
+            title="sql-leaderboard.json"
+            className="lg:col-span-2"
+          >
             <a
               href={sqlLeaderboard.link}
               target="_blank"
@@ -57,13 +60,16 @@ export default function CodingActivity() {
             >
               <Database size={20} className="text-accent" />
               <span>
-                {sqlLeaderboard.platform} leaderboard —{' '}
+                {sqlLeaderboard.platform} leaderboard —{" "}
                 <span className="text-accent">{sqlLeaderboard.status}</span>
               </span>
             </a>
           </TerminalWindow>
 
-          <TerminalWindow title="contributions-trend.sh" className="lg:col-span-2">
+          <TerminalWindow
+            title="contributions-trend.sh"
+            className="lg:col-span-2"
+          >
             <CodingTrend />
           </TerminalWindow>
 
@@ -73,5 +79,5 @@ export default function CodingActivity() {
         </div>
       </div>
     </section>
-  )
+  );
 }
