@@ -1,0 +1,17 @@
+[
+  {
+    "date": "2026-06-13",
+    "type": "project",
+    "message": "Added a Coding Activity section with live GitHub/LeetCode stats to the portfolio."
+  },
+  {
+    "date": "2026-06-10",
+    "type": "learning",
+    "message": "Reading 'Designing Data-Intensive Applications' — chapter on replication and consistency models."
+  },
+  {
+    "date": "2026-06-05",
+    "type": "leetcode",
+    "message": "Solved 'Merge Intervals' (Medium) and reviewed interval-scheduling patterns."
+  }
+]
