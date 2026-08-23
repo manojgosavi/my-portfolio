@@ -203,7 +203,7 @@ export const sideProjects: SideProject[] = [
     description:
       'An open-source platform to A/B test and score LLM outputs across providers (Claude, GPT-4o, Gemini) using latency, cost, token, and semantic quality metrics.',
     tags: ['Python', 'FastAPI', 'React', 'Docker'],
-    link: 'https://example.com',
+    link: 'https://llm-eval-platform-ly956whij-maverick-monk.vercel.app/',
     repo: 'https://github.com/manojgosavi/llm-eval-platform',
   },
   {
