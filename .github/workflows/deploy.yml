@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch: {}
 
 jobs:
   deploy:
@@ -13,23 +14,20 @@ jobs:
       - name: Checkout portfolio source
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Deploy to manojgosavi.github.io
+      - name: Deploy site/ to manojgosavi.github.io
         run: |
           git clone https://x-access-token:${{ secrets.PAGES_DEPLOY_TOKEN }}@github.com/manojgosavi/manojgosavi.github.io.git /tmp/pages
-          cp -r dist/. /tmp/pages/
+
+          # Mirror site/ into the Pages repo. --delete removes files that no longer
+          # exist in site/ (e.g. old build bundles); .git and README.md are kept.
+          # Files starting with "_" (like notes/_template.html) are not published.
+          rsync -a --delete \
+            --exclude '.git/' \
+            --exclude 'README.md' \
+            --exclude '_*' \
+            site/ /tmp/pages/
           touch /tmp/pages/.nojekyll
+
           cd /tmp/pages
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

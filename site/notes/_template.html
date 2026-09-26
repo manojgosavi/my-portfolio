@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- 1. Copy this file to notes/<short-slug>.html and replace every [bracketed] part. -->
+  <title>[Note title] · Manoj Gosavi</title>
+  <meta name="description" content="[One-sentence summary — shows up in search results and link previews.]" />
+  <meta name="theme-color" content="#0f1115" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+  <style>
+    :root {
+      --bg: #0f1115;
+      --text: #d6d6d6;
+      --strong: #ffffff;
+      --muted: #8a8f98;
+      --faint: #6b7078;
+      --rule: #555;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 15px/1.65 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    main { max-width: 640px; margin: 0 auto; padding: 72px 24px 80px; }
+    h1 { font-size: 22px; color: var(--strong); font-weight: 600; margin: 0; }
+    .role { color: var(--muted); margin: 2px 0 22px; }
+    p { margin: 0 0 14px; }
+    a {
+      color: #e6e6e6;
+      text-decoration: underline;
+      text-decoration-color: var(--rule);
+      text-underline-offset: 3px;
+    }
+    a:hover { text-decoration-color: #e6e6e6; }
+    .links a { margin-right: 16px; color: #9aa0a6; }
+    h2 { font-size: 13px; color: var(--muted); font-weight: 500; margin: 44px 0 14px; }
+    .row { display: grid; grid-template-columns: 110px 1fr; gap: 12px; margin-bottom: 14px; }
+    .y { color: var(--faint); font-variant-numeric: tabular-nums; }
+    .d { color: var(--muted); }
+    footer { margin-top: 56px; color: var(--faint); font-size: 13px; }
+
+    @media (max-width: 480px) {
+      main { padding: 48px 20px 64px; }
+      .row { grid-template-columns: 1fr; gap: 0; }
+      .y { font-size: 13px; }
+    }
+
+    /* Notes pages */
+    .back { font-size: 13px; color: var(--muted); }
+    article h1 { margin-top: 28px; }
+    article .meta { color: var(--faint); font-size: 13px; margin: 4px 0 28px; }
+    article h2 { font-size: 16px; color: var(--strong); font-weight: 600; margin: 32px 0 10px; }
+    article ul { padding-left: 20px; margin: 0 0 14px; }
+    article li { margin-bottom: 6px; }
+    code { font: 13px ui-monospace, Menlo, monospace; color: #c9ccd1; background: #1a1d23; padding: 1px 5px; border-radius: 4px; }
+    pre { background: #1a1d23; padding: 14px 16px; border-radius: 6px; overflow-x: auto; }
+    pre code { background: none; padding: 0; }
+    img { max-width: 100%; }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="index.html">← Notes</a>
+
+    <article>
+      <h1>[Note title]</h1>
+      <div class="meta">[Month Year] · [~X min read]</div>
+
+      <!--
+        Aim for 400–1,000 words. Write for an engineer who knows the basics
+        but hasn't done this exact thing. Delete any section that doesn't fit.
+      -->
+
+      <p>[Opening: what this is about and why you did it, in 2–3 sentences. Lead with the problem, not the tool.]</p>
+
+      <h2>The core idea</h2>
+      <p>[Explain the one thing that matters most, in your own words. If you can't explain it simply, that's the part to dig into before publishing.]</p>
+
+      <h2>What I built or tried</h2>
+      <p>[Concrete details: setup, data, code, numbers. Link to the repo or a notebook.]</p>
+      <pre><code>[Optional: a short, meaningful code snippet — 5 to 20 lines, not a full file.]</code></pre>
+
+      <h2>What surprised me</h2>
+      <ul>
+        <li>[Something that didn't work the way you expected, and why.]</li>
+        <li>[A trade-off you had to make, and what drove the decision.]</li>
+      </ul>
+
+      <h2>What I'd do next</h2>
+      <p>[Open questions, what you'd change, or the follow-up experiment.]</p>
+
+      <h2>References</h2>
+      <ul>
+        <li><a href="[url]">[Paper, chapter or post you drew on]</a></li>
+      </ul>
+    </article>
+
+    <footer>© [Year] Manoj Gosavi</footer>
+  </main>
+  <script data-goatcounter="https://manojgosavi.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
+<!--
+  2. Add a row for this note to notes/index.html.
+  3. For your first note, uncomment the Notes section on the home page (site/index.html).
+  (Files starting with "_" are not deployed.)
+-->
