@@ -69,6 +69,7 @@
     .row { display: grid; grid-template-columns: 110px 1fr; gap: 12px; margin-bottom: 14px; }
     .y { color: var(--faint); font-variant-numeric: tabular-nums; }
     .d { color: var(--muted); }
+    code { font: 13px ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--code-bg); color: var(--code); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
     footer { margin-top: 56px; color: var(--faint); font-size: 13px; }
 
     @media (max-width: 480px) {
@@ -103,6 +104,29 @@
       </span>
     </div>
     <!-- Add the streaming pipeline and resume/job matcher here once each has a public repo. -->
+
+    <h2>Open source</h2>
+    <div class="row">
+      <span class="y">2026</span>
+      <span>
+        <a href="https://github.com/great-expectations/great_expectations/pull/12286">Great Expectations #12286</a><br />
+        <span class="d">Fixed Spark validations dropping unexpected-row results when column names contain dots and <code>unexpected_index_column_names</code> is set (closes <a href="https://github.com/great-expectations/great_expectations/issues/12196">#12196</a>).</span>
+      </span>
+    </div>
+    <div class="row">
+      <span class="y">2026</span>
+      <span>
+        <a href="https://github.com/kestra-io/blueprints/pull/438">Kestra blueprints #438</a><br />
+        <span class="d">Data quality gate blueprint: validates files landing in S3 with Great Expectations, loads passing files to Postgres, and quarantines failures with a Slack alert.</span>
+      </span>
+    </div>
+    <div class="row">
+      <span class="y">2026</span>
+      <span>
+        <a href="https://github.com/kestra-io/blueprints/pull/456">Kestra blueprints #456</a><br />
+        <span class="d">Incremental Postgres → S3 replication blueprint with Sling, keyed on an update timestamp, with a self-contained DuckDB demo mode.</span>
+      </span>
+    </div>
 
     <h2>Now</h2>
     <p class="d">Building a real-time streaming pipeline (Kafka → PySpark Structured Streaming → Go API) and an embeddings-based resume/job matcher.</p>
