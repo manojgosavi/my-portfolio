@@ -69,6 +69,8 @@
     .row { display: grid; grid-template-columns: 110px 1fr; gap: 12px; margin-bottom: 14px; }
     .y { color: var(--faint); font-variant-numeric: tabular-nums; }
     .d { color: var(--muted); }
+    .pts { margin: 8px 0 0; padding-left: 18px; color: var(--muted); }
+    .pts li { margin-bottom: 8px; }
     code { font: 13px ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--code-bg); color: var(--code); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
     footer { margin-top: 56px; color: var(--faint); font-size: 13px; }
 
@@ -134,7 +136,13 @@
     <h2>Work</h2>
     <div class="row">
       <span class="y">2025 — now</span>
-      <span>Senior Data Engineer, Thoughtworks<br /><span class="d">Migrated 400+ tables from Exasol to Snowflake + dbt for a retail and e-commerce client.</span></span>
+      <span>Senior Data Engineer, Thoughtworks<br /><span class="d">Migrated 400+ tables from Exasol to Snowflake + dbt for a retail and e-commerce client.</span>
+        <ul class="pts">
+          <li>Architected and managed 8 interconnected microservices across 3+ Google Cloud environments. Orchestrated 50+ Apache Airflow DAGs running 100+ scheduled workflows a day, processing millions of events on Terraform-managed infrastructure (Cloud Functions, Pub/Sub topics and distributed task schedulers) with a 99.9% uptime SLA.</li>
+          <li>Engineered end-to-end data pipelines ingesting partner violations, SLA metrics and risk assessments from enterprise sources (Exasol, Snowflake), processing 10,000+ events a day through asynchronous message queues and a 4-stage event transformation pipeline. Cut data latency by 40% and enabled real-time decisions for 500+ business partners across returns, orders and customer communication workflows.</li>
+          <li>Designed and deployed 6+ reusable Terraform modules managing 20+ GCP resources, and integrated 8+ external APIs (Salesforce, Tokio, Kogito, Jellyfish) with internal data platforms. Rolled the framework out across 4 environments with zero security incidents, with automated CI/CD pipelines, 100% infrastructure-as-code coverage and deployments under 5 minutes.</li>
+        </ul>
+      </span>
     </div>
     <div class="row">
       <span class="y">2022 — 2025</span>
